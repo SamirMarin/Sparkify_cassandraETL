@@ -25,3 +25,6 @@ tags
 ### JupyterNotebook ###
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
+
+# exclue the csv file from git commits
+event_datafile_new.csv
