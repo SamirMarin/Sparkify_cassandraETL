@@ -66,3 +66,6 @@ songs_per_user_test_select = """SELECT artist, song_title, item_in_session, firs
 users_per_song_test_select = """SELECT first_name, last_name, song_title \
                                 FROM users_per_song WHERE song_title='All Hands Against His Own'\
                              """
+
+drop_table_queries = [songs_in_session_drop, songs_per_user_drop, users_per_song_drop]
+create_table_queries = [songs_in_session_create, songs_per_user_create, users_per_song_create]
