@@ -69,3 +69,4 @@ users_per_song_test_select = """SELECT first_name, last_name, song_title \
 
 drop_table_queries = [songs_in_session_drop, songs_per_user_drop, users_per_song_drop]
 create_table_queries = [songs_in_session_create, songs_per_user_create, users_per_song_create]
+insert_table_queries = {"songs_in_session" :songs_in_session_insert, "songs_per_user": songs_per_user_insert, "users_per_song": users_per_song_insert}
