@@ -29,7 +29,11 @@ def insert_into_tables(session):
 def main():
     session = create_keyspace()
     set_keyspace(session)
+    print("Inserting data into tables")
+    print("")
     insert_into_tables(session)
+    print("Data inserted")
+    print("")
 
 
 if __name__ == "__main__":
