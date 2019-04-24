@@ -51,7 +51,11 @@ def main():
     session = create_keyspace()
     set_keyspace(session)
     drop_tables(session)
+    print("Creating Tables")
+    print("")
     create_tables(session)
+    print("Tables created")
+    print("")
 
 if __name__ == "__main__":
     main()

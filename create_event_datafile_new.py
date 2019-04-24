@@ -48,8 +48,14 @@ def create_new_csv_file(full_data_rows_list):
 
 def main():
     file_path_list = get_file_path_list()
+    print("Processing event_data")
+    print("")
     full_data_rows_list = create_list_of_data_to_write(file_path_list)
+    print("Creating create_event_data_new.csv")
+    print("")
     create_new_csv_file(full_data_rows_list)
+    print("create_event_data_new.csv created")
+    print("")
 
 
 
