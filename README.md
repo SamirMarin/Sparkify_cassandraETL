@@ -43,3 +43,19 @@ python3 create_event_datafile_new.py
 python3 create_tables.py
 ```
 
+> 3. etl.py insert data into the tables from event_datafile_new.csv
+
+>> Run with:
+
+```
+python3 etl.py
+```
+
+> 4. test_queries.py runs test select queries based on the three questions:
+
+>> 1. Selects the artist, song title and song's length in the music app history that was heard during a 
+     sessionId =338 and itemInSession=4.
+>> 2. Selects the name of artist, song (sorted by itemInSession) and user (first and last name) for userid=10 and sessionid=182
+>> 3. Selects the user name (first and last) in my music app history who listened to a the song=All Hands Against His Own
+
+
