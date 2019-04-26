@@ -77,4 +77,11 @@ It should be executable but if not executable you can make executable by:
 chmod +x run_etl_pipeline.sh
 ```
 
+## Jupyter notebook
+lastly there is a jupyter notebook that can be used to accomplish what the python scripts accomplish. Starting with the python code that stream lines the dataset into a single csv file (code given with project template). After which you will find for each question addressed:
+1) A table creation statement
+2) An insert statement
+3) A select test statement (like the one found in the pythong script)
+
+And lastly drop statements for the three tables.
 
