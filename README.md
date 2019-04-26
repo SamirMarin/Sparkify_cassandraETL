@@ -12,10 +12,10 @@ There is one data set under event_data/* the files under this folder will be str
 event_datafile_new.csv
 
 ## The ETL Pipeline
-Consit of 4 python this scripts process the data, create the tables, insert the data into the tables and test the tables with
+Consits of 4 python scripts that process the data, create the tables, insert the data into the tables and test the tables with
 select queries
 
-> 1. create_event_datafile_new.py streamlines the data from event_data/* into single csv file event_datafile_new.csv which 
+> 1. create_event_datafile_new.py streamlines the data from event_data/* into single csv file `event_datafile_new.csv` which 
       contains the following columns:
 >>      artist, firstName of user, gender of user, item number in session, last name of user, length of the song, level (paid or free song), location of the user, sessionId, song title, userId
 
@@ -26,16 +26,16 @@ python3 create_event_datafile_new.py
 ```
 
 
-> 2. create_tables.py creates three tables based on the three questions, note everytime you run this script it also drops tables before creating so you will have to re-insert that if you run.
+> 2. create_tables.py creates three tables based on the three questions, note everytime you run this script it also drops tables before creating so you will have to re-insert data if you run.
 
 >> Table 1: Creates table using columns - artis, song_title, song_length, session_id, and item_in_session
->> with PRIMARY KEY: (session_id, item_in_session), PARTITION KEY: session_id, and CLUSTERING COLUMNS item_in_session
+>> with PRIMARY KEY: (session_id, item_in_session), PARTITION KEY: session_id, and CLUSTERING COLUMN item_in_session
 
 >> Table 2: Creates table using columns - artist, song_title, user_id, first_name, last_name, session_id, item_in_session
->> with PRIMARY KEY: (user_id, session_id, item_in_session), PARTITION KEY: (user_id, session_id), and CLUSTERING COLUMNS:  item_in_session
+>> with PRIMARY KEY: (user_id, session_id, item_in_session), PARTITION KEY: (user_id, session_id), and CLUSTERING COLUMN:  item_in_session
 
 >> Table 3: Creates table using columns - song_title, user_id, first_name, last_name,
->> with PRIMARY KEY: (song_title, user_id), PARTITION KEY: song_title, and CLUSTERING COLUMNS: user_id
+>> with PRIMARY KEY: (song_title, user_id), PARTITION KEY: song_title, and CLUSTERING COLUMN: user_id
 
 >>  Run with:
 
@@ -43,7 +43,7 @@ python3 create_event_datafile_new.py
 python3 create_tables.py
 ```
 
-> 3. etl.py insert data into the tables from event_datafile_new.csv
+> 3. etl.py inserts data into the three tables from event_datafile_new.csv
 
 >> Run with:
 
@@ -65,6 +65,7 @@ python3 test_queries.py
 ```
 
 These four python scripts can be run at once with a bash script: `run_etl_pipeline.sh`
+
 To Run:
 
 ```
@@ -78,10 +79,10 @@ chmod +x run_etl_pipeline.sh
 ```
 
 ## Jupyter notebook
-lastly there is a jupyter notebook that can be used to accomplish what the python scripts accomplish. Starting with the python code that stream lines the dataset into a single csv file (code given with project template). After which you will find for each question addressed:
+lastly there is a Jupyter notebook that can be used to accomplish what the python scripts accomplishes. Starting with the python code that stream lines the dataset into a single csv file (code given with project template). After which you will find for each question addressed:
 1) A table creation statement
 2) An insert statement
-3) A select test statement (like the one found in the pythong script)
+3) A select test statement (like the one found in the python script)
 
 And lastly drop statements for the three tables.
 
