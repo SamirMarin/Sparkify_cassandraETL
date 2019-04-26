@@ -26,7 +26,7 @@ python3 create_event_datafile_new.py
 ```
 
 
-> 2. create_tables.py creates three tables based on the three questions
+> 2. create_tables.py creates three tables based on the three questions, note everytime you run this script it also drops tables before creating so you will have to re-insert that if you run.
 
 >> Table 1: Creates table using columns - artis, song_title, song_length, session_id, and item_in_session
 >> with PRIMARY KEY: (session_id, item_in_session), PARTITION KEY: session_id, and CLUSTERING COLUMNS item_in_session
@@ -57,5 +57,24 @@ python3 etl.py
      sessionId =338 and itemInSession=4.
 >> 2. Selects the name of artist, song (sorted by itemInSession) and user (first and last name) for userid=10 and sessionid=182
 >> 3. Selects the user name (first and last) in my music app history who listened to a the song=All Hands Against His Own
+
+>> Run with:
+
+```
+python3 test_queries.py
+```
+
+These four python scripts can be run at once with a bash script: `run_etl_pipeline.sh`
+To Run:
+
+```
+./run_etl_pipeline.sh
+```
+
+It should be executable but if not executable you can make executable by:
+
+```
+chmod +x run_etl_pipeline.sh
+```
 
 
