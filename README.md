@@ -25,6 +25,21 @@ select queries
 python3 create_event_datafile_new.py
 ```
 
+
 > 2. create_tables.py creates three tables based on the three questions
 
->> table1 Creates table using columns artis, song_title, song_length, session_id, and item_in_session
+>> Table 1: Creates table using columns - artis, song_title, song_length, session_id, and item_in_session
+>> with PRIMARY KEY: (session_id, item_in_session), PARTITION KEY: session_id, and CLUSTERING COLUMNS item_in_session
+
+>> Table 2: Creates table using columns - artist, song_title, user_id, first_name, last_name, session_id, item_in_session
+>> with PRIMARY KEY: (user_id, session_id, item_in_session), PARTITION KEY: (user_id, session_id), and CLUSTERING COLUMNS:  item_in_session
+
+>> Table 3: Creates table using columns - song_title, user_id, first_name, last_name,
+>> with PRIMARY KEY: (song_title, user_id), PARTITION KEY: song_title, and CLUSTERING COLUMNS: user_id
+
+>>  Run with:
+
+```
+python3 create_tables.py
+```
+
