@@ -3,9 +3,11 @@ from queries import insert_table_queries
 from create_tables import create_keyspace, set_keyspace
 
 def execute_insert(session, query, values):
+    """Executes the given insert queries with the given values"""
     session.execute(query, values)
 
 def insert_into_tables(session):
+    """Reads event_datafile_new file and calls insert queries to insert data"""
     file = 'event_datafile_new.csv'
     
     with open(file, encoding = 'utf8') as f:

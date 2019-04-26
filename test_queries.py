@@ -3,6 +3,7 @@ from create_tables import create_keyspace, set_keyspace
 
 
 def execute_select(session, select_query):
+    """Executes the given select query"""
     try:
         rows = session.execute(select_query)
     except Exception as e:
@@ -11,6 +12,7 @@ def execute_select(session, select_query):
     return rows
 
 def select(session):
+    """Calls select queries and prints its results"""
     for table, select_query in select_table_queries.items():
         if table == "songs_in_session":
             rows = execute_select(session, select_query)
